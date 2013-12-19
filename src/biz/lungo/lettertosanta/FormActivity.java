@@ -34,6 +34,8 @@ public class FormActivity extends Activity implements OnClickListener {
 	RadioGroup rgSex;
 	EditText et01, et02, et03, et04, et05, et06, et07, et08, et09, 
 	et10, et11, et12, et13, et14, et15, et16, et17, et18, et19, et20;	
+	/*EditText etArray[] = {et01, et02, et03, et04, et05, et06, et07, et08, et09, 
+	et10, et11, et12, et13, et14, et15, et16, et17, et18, et19, et20};*/
 	EditText etArray[] = new EditText[20];
 	Button buttonDone;
 	ProgressBar pb;
@@ -97,7 +99,7 @@ public class FormActivity extends Activity implements OnClickListener {
 		if (isAllFormsFilled()){
 			buttonDone.setVisibility(Button.GONE);
 			pb.setVisibility(ProgressBar.VISIBLE);
-			new Thread(new Runnable() {				
+			new Thread(new Runnable() {
 				@Override
 				public void run() {
 					sendRequest();
@@ -165,7 +167,7 @@ public class FormActivity extends Activity implements OnClickListener {
 		ab.show();
 	}
 	private boolean isAllFormsFilled() {
-		sbUnfilledForms = new StringBuilder();		
+		sbUnfilledForms = new StringBuilder();
 		for (int i = 0; i < etArray.length; i++){
 			if (etArray[i].getText().toString().matches("")){
 				sbUnfilledForms.append(etArray[i].getHint().toString() + "\n");
