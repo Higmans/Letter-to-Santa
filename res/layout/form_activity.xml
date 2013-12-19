@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <RadioGroup
+            android:id="@+id/radioGroupSex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Я парень" />
+
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Я девушка" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/editText1"
+            android:tag="et01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Имя" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:tag="et02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Возраст"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:tag="et03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Во сколько ты ложишся спать?" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:tag="et04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Что чаще всего ломается?" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:tag="et05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Что обычно любят мухи?" />
+
+        <EditText
+            android:id="@+id/editText6"
+            android:tag="et06"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Напиши любую фразу" />
+
+        <EditText
+            android:id="@+id/editText7"
+            android:tag="et07"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Как бы ты назвал предателя?" />
+
+        <EditText
+            android:id="@+id/editText8"
+            android:tag="et08"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Ругнись!" />
+
+        <EditText
+            android:id="@+id/editText9"
+            android:tag="et09"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Любимая часть твоего тела?" />
+
+        <EditText
+            android:id="@+id/editText10"
+            android:tag="et10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Что бывает красным?" />
+
+        <EditText
+            android:id="@+id/editText11"
+            android:tag="et11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Профессия?" />
+        
+        <EditText
+            android:id="@+id/editText12"
+            android:tag="et12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Любимая детская игра?" />
+        
+        <EditText
+            android:id="@+id/editText13"
+            android:tag="et13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Что будет при конце света?" />
+        
+        <EditText
+            android:id="@+id/editText14"
+            android:tag="et14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Каково обычно после большой пьянки?" />
+        
+        <EditText
+            android:id="@+id/editText15"
+            android:tag="et15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Чего не хватает в твоем доме?" />
+        
+        <EditText
+            android:id="@+id/editText16"
+            android:tag="et16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Бытовой предмет" />
+        
+        <EditText
+            android:id="@+id/editText17"
+            android:tag="et17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Чего тебе хочется сейчас?" />
+        
+        <EditText
+            android:id="@+id/editText18"
+            android:tag="et18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Место где не станут искать" />
+        
+        <EditText
+            android:id="@+id/editText19"
+            android:tag="et19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Как зовут твою собаку?" />
+        
+        <EditText
+            android:id="@+id/editText20"
+            android:tag="et20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:singleLine="true"
+            android:hint="Нехороший человек - ..." />
+        
+        <Button android:id="@+id/buttonDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Закончить"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</ScrollView>
