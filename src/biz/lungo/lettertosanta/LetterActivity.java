@@ -35,51 +35,94 @@ public class LetterActivity extends Activity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		sb = new StringBuilder();
-		sb.append(et01 + "\n")
-		.append(et02 + "\n")
-		.append(et03 + "\n")
-		.append(et04 + "\n")
-		.append(et05 + "\n")
-		.append(et06 + "\n")
-		.append(et07 + "\n")
-		.append(et08 + "\n")
-		.append(et09 + "\n")
-		.append(et10 + "\n")
-		.append(et11 + "\n")
-		.append(et12 + "\n")
-		.append(et13 + "\n")
-		.append(et14 + "\n")
-		.append(et15 + "\n")
-		.append(et16 + "\n")
-		.append(et17 + "\n")
-		.append(et18 + "\n")
-		.append(et19 + "\n")
-		.append(et20 + "\n");
-		tv.setText(sb.toString());
+		tv.setText(formatLetter());
 	}
 
-	private void getStrings() throws JSONException {
-		et01 = form.getString("et01");
-		et02 = form.getString("et02");
-		et03 = form.getString("et03");
-		et04 = form.getString("et04");
-		et05 = form.getString("et05");
-		et06 = form.getString("et06");
-		et07 = form.getString("et07");
-		et08 = form.getString("et08");
-		et09 = form.getString("et09");
-		et10 = form.getString("et10");
-		et11 = form.getString("et11");
-		et12 = form.getString("et12");
-		et13 = form.getString("et13");
-		et14 = form.getString("et14");
-		et15 = form.getString("et15");
-		et16 = form.getString("et16");
-		et17 = form.getString("et17");
-		et18 = form.getString("et18");
-		et19 = form.getString("et19");
-		et20 = form.getString("et20");
+    private String formatLetter() {
+        boolean male = true;
+        try {
+            male = Integer.parseInt(form.getString("sex")) == R.id.radioMale;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        sb = new StringBuilder();
+        sb.append(getResources().getString(R.string.part_1))
+                .append(et01)
+                .append(getResources().getString(R.string.part_2))
+                .append(et02)
+                .append(getResources().getString(R.string.part_3))
+                .append(et18)
+                .append(getResources().getString(R.string.part_4))
+                .append(et03)
+                .append(getResources().getString(R.string.part_5))
+                .append(et16)
+                .append(getResources().getString(R.string.part_6))
+                .append(et09)
+                .append(male?getResources().getString(R.string.part_7):getResources().getString(R.string.part_7_f))
+                .append(et06)
+                .append(getResources().getString(R.string.part_8))
+                .append(et11)
+                .append(getResources().getString(R.string.part_9))
+                .append(et08)
+                .append(getResources().getString(R.string.part_10))
+                .append(et04)
+                .append(getResources().getString(R.string.part_11))
+                .append(et05)
+                .append(getResources().getString(R.string.part_12))
+                .append(et12)
+                .append(getResources().getString(R.string.part_13))
+                .append(et01)
+                .append(getResources().getString(R.string.part_14))
+                .append(et19)
+                .append(getResources().getString(R.string.part_15))
+                .append(et20)
+                .append(getResources().getString(R.string.part_16))
+                .append(et14)
+                .append(getResources().getString(R.string.part_17))
+                .append(et10)
+                .append(getResources().getString(R.string.part_18))
+                .append(et16)
+                .append(getResources().getString(R.string.part_19))
+                .append(et17)
+                .append(getResources().getString(R.string.part_20))
+                .append(et15)
+                .append(getResources().getString(R.string.part_21))
+                .append(et14)
+                .append(getResources().getString(R.string.part_22))
+                .append(et13)
+                .append(getResources().getString(R.string.part_23))
+                .append(et07)
+                .append(getResources().getString(R.string.part_24));
+        return sb.toString();
+    }
+
+
+    private void getStrings() throws JSONException {
+		et01 = formatSpaces(form.getString("et01")); 
+		et02 = formatSpaces(form.getString("et02")); 
+		et03 = formatSpaces(form.getString("et03")); 
+		et04 = formatSpaces(form.getString("et04")); 
+		et05 = formatSpaces(form.getString("et05")); 
+		et06 = formatSpaces(form.getString("et06")); 
+		et07 = formatSpaces(form.getString("et07")); 
+		et08 = formatSpaces(form.getString("et08")); 
+		et09 = formatSpaces(form.getString("et09")); 
+		et10 = formatSpaces(form.getString("et10")); 
+		et11 = formatSpaces(form.getString("et11")); 
+		et12 = formatSpaces(form.getString("et12")); 
+		et13 = formatSpaces(form.getString("et13")); 
+		et14 = formatSpaces(form.getString("et14"));
+		et15 = formatSpaces(form.getString("et15")); 
+		et16 = formatSpaces(form.getString("et16")); 
+		et17 = formatSpaces(form.getString("et17")); 
+		et18 = formatSpaces(form.getString("et18")); 
+		et19 = formatSpaces(form.getString("et19")); 
+		et20 = formatSpaces(form.getString("et20")); 
 	}
+
+    private String formatSpaces(String string) {
+        return string.replace("%20", " ");
+    }
 
 }

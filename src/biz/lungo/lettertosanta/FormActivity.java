@@ -16,7 +16,6 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.protocol.HTTP;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -36,15 +35,13 @@ import android.widget.TextView;
 public class FormActivity extends Activity implements OnClickListener, OnLongClickListener {
 	RadioGroup rgSex;
 	EditText et01, et02, et03, et04, et05, et06, et07, et08, et09, 
-	et10, et11, et12, et13, et14, et15, et16, et17, et18, et19, et20;	
-	/*EditText etArray[] = {et01, et02, et03, et04, et05, et06, et07, et08, et09, 
-	et10, et11, et12, et13, et14, et15, et16, et17, et18, et19, et20};*/
+	et10, et11, et12, et13, et14, et15, et16, et17, et18, et19, et20;
 	EditText etArray[] = new EditText[20];
 	Button buttonDone;
 	ProgressBar pb;
 	StringBuilder sbUnfilledForms;
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {		
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.form_activity);
@@ -120,9 +117,9 @@ public class FormActivity extends Activity implements OnClickListener, OnLongCli
 		HttpPost post = new HttpPost("http://httpbin.org/post");
 		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
 		nameValuePairs.add(new BasicNameValuePair("sex", rgSex.getCheckedRadioButtonId() + ""));
-		for (int i = 0; i < etArray.length; i++){
-			nameValuePairs.add(new BasicNameValuePair(etArray[i].getTag().toString(), encodeSpaces(etArray[i].getText().toString())));
-		}
+        for (EditText anEtArray : etArray) {
+            nameValuePairs.add(new BasicNameValuePair(anEtArray.getTag().toString(), encodeSpaces(anEtArray.getText().toString())));
+        }
         try {
 			post.setEntity(new UrlEncodedFormEntity(nameValuePairs, "UTF-8"));
 		} catch (UnsupportedEncodingException e) {
@@ -136,11 +133,16 @@ public class FormActivity extends Activity implements OnClickListener, OnLongCli
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-        HttpEntity entity = response.getEntity();
+        HttpEntity entity = null;
+        if (response != null) {
+            entity = response.getEntity();
+        }
         InputStream is = null;
 		try {
-			is = entity.getContent();
-		} catch (IllegalStateException e) {
+            if (entity != null) {
+                is = entity.getContent();
+            }
+        } catch (IllegalStateException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -172,11 +174,11 @@ public class FormActivity extends Activity implements OnClickListener, OnLongCli
 	}
 	private boolean isAllFormsFilled() {
 		sbUnfilledForms = new StringBuilder();
-		for (int i = 0; i < etArray.length; i++){
-			if (etArray[i].getText().toString().matches("")){
-				sbUnfilledForms.append(etArray[i].getHint().toString() + "\n");
-			}
-		}
+        for (EditText anEtArray : etArray) {
+            if (anEtArray.getText().toString().matches("")) {
+                sbUnfilledForms.append(anEtArray.getHint().toString()).append("\n");
+            }
+        }
 		return sbUnfilledForms.length() == 0;
 	}
 	private String inputStreamToString(InputStream in) throws IOException {
@@ -185,7 +187,7 @@ public class FormActivity extends Activity implements OnClickListener, OnLongCli
 	    String line = null;
 
 	    while ((line = bufferedReader.readLine()) != null) {
-	        stringBuilder.append(line + "\n");
+	        stringBuilder.append(line).append("\n");
 	    }
 
 	    bufferedReader.close();
@@ -193,26 +195,26 @@ public class FormActivity extends Activity implements OnClickListener, OnLongCli
 	}
 	@Override
 	public boolean onLongClick(View v) {
-		et01.setText("Илья");
-		et02.setText("26");
-		et03.setText("01.00");
-		et04.setText("ребро");
-		et05.setText("клубнику");
-		et06.setText("Лорем ипсум долор амет");
-		et07.setText("чудила");
-		et08.setText("идтить колотить!");
-		et09.setText("пятка");
-		et10.setText("тряпка");
-		et11.setText("тракторист");
-		et12.setText("застреляшки");
-		et13.setText("армагедон");
-		et14.setText("хреново");
-		et15.setText("ёлки");
-		et16.setText("трансфокатор");
-		et17.setText("семку");
-		et18.setText("Колыма");
-		et19.setText("Федор Михалыч");
-		et20.setText("киргизка");
+		et01.setText(getResources().getString(R.string.et01));
+        et02.setText(getResources().getString(R.string.et02));
+        et03.setText(getResources().getString(R.string.et03));
+        et04.setText(getResources().getString(R.string.et04));
+        et05.setText(getResources().getString(R.string.et05));
+        et06.setText(getResources().getString(R.string.et06));
+        et07.setText(getResources().getString(R.string.et07));
+        et08.setText(getResources().getString(R.string.et08));
+        et09.setText(getResources().getString(R.string.et09));
+        et10.setText(getResources().getString(R.string.et10));
+        et11.setText(getResources().getString(R.string.et11));
+        et12.setText(getResources().getString(R.string.et12));
+        et13.setText(getResources().getString(R.string.et13));
+        et14.setText(getResources().getString(R.string.et14));
+        et15.setText(getResources().getString(R.string.et15));
+        et16.setText(getResources().getString(R.string.et16));
+        et17.setText(getResources().getString(R.string.et17));
+        et18.setText(getResources().getString(R.string.et18));
+        et19.setText(getResources().getString(R.string.et19));
+        et20.setText(getResources().getString(R.string.et20));
 		return false;
 	}
 

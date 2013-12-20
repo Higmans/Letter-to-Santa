@@ -6,4 +6,56 @@
     <string name="hello_world">Hello world!</string>
     <string name="form_alert">Вы не заполнили следующие пункты формы:</string>
 
+    <string name="et01">Илья</string>
+    <string name="et02">26</string>
+    <string name="et03">01.00</string>
+    <string name="et04">локоть</string>
+    <string name="et05">клубнику</string>
+    <string name="et06">Лорем ипсум долор амет</string>
+    <string name="et07">чудила</string>
+    <string name="et08">Идтить колотить!</string>
+    <string name="et09">фаланга</string>
+    <string name="et10">ручка</string>
+    <string name="et11">тракторист</string>
+    <string name="et12">застреляшки</string>
+    <string name="et13">алаверды</string>
+    <string name="et14">хреновенько</string>
+    <string name="et15">бассейна</string>
+    <string name="et16">трансфокатор</string>
+    <string name="et17">мамбу</string>
+    <string name="et18">Колыма</string>
+    <string name="et19">Федор Михалыч</string>
+    <string name="et20">фуфло</string>
+
+    <string name="let">лет!</string>
+    <string name="god">год!</string>
+    <string name="goda">года!</string>
+
+    <string name="letter_title">Дедушке Морозу</string>
+    <string name="part_1">Здравствуй, Дедушка Мороз!\nМеня зовут\u0020</string>
+    <string name="part_2">.\u0020Мне\u0020</string>
+    <string name="part_3">. Не много не мало, но я верю и надеюсь в то, что ты есть и сейчас читаешь моё письмо. Моя мама очень злая тётя. Она не разрешает писать мне письма тебе, и поэтому я сижу в\u0020</string>
+    <string name="part_4">\u0020и пишу это письмо. Мама выпускает меня гулять только до\u0020</string>
+    <string name="part_5">. Когда я её не слушаюсь, она бросает в меня\u0020</string>
+    <string name="part_6">\u0020и частенько попадает мне прямо в\u0020</string>
+    <string name="part_7">.\u0020Однажды я не вытерпел и сказал ей:\u0020\"</string>
+    <string name="part_7_f">.\u0020Однажды я не вытерпела и сказала ей:\u0020\"</string>
+    <string name="part_8">\". Мой папа работает\u0020</string>
+    <string name="part_9">ом и приходя с работы с плохим настроением, он кричит: \"</string>
+    <string name="part_10">\" И заставляет меня чинить его\u0020</string>
+    <string name="part_11">. Но я не умею ничего ремонтировать, и поэтому у меня получается\u0020</string>
+    <string name="part_12">. Он злится ещё сильнее, и запрещает мне играть в\u0020</string>
+    <string name="part_13">\u0020с друзьями. Ещё папа придумал мне кличку, и зовёт меня не\u0020</string>
+    <string name="part_14">, а\u0020</string>
+    <string name="part_15">.\u0020Это очень обидно. В общем, дедушка мороз, если ты не\u0020</string>
+    <string name="part_16">, то ты поймёшь как мне\u0020</string>
+    <string name="part_17">. Дорогой Дедушка мороз - красный\u0020</string>
+    <string name="part_18">\u0020забери меня к себе или вышли мне\u0020</string>
+    <string name="part_19">. Ещё сделай так, что бы близкие мне люди любили меня и почаще давали мне денег на\u0020</string>
+    <string name="part_20">. Любимый дед мороз, ты мой последний шанс. Я надеюсь на новый год я найду под ёлочкой\u0020</string>
+    <string name="part_21">. Дед Мороз, пойми как мне\u0020</string>
+    <string name="part_22">. Если ты не прочтёшь это письмо или оно не дойдёт до тебя, мне\u0020</string>
+    <string name="part_23">. Помни, что я верю в тебя,\u0020</string>
+    <string name="part_24">!!!</string>
+
 </resources>
