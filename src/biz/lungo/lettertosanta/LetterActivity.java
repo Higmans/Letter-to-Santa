@@ -11,10 +11,10 @@ import android.widget.TextView;
 
 public class LetterActivity extends Activity {
 	TextView tv;
-	JSONObject jo;
 	String et01, et02, et03, et04, et05, et06, et07, et08, et09, 
 	et10, et11, et12, et13, et14, et15, et16, et17, et18, et19, et20;
 	StringBuilder sb;
+	JSONObject form;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +23,14 @@ public class LetterActivity extends Activity {
 		setContentView(R.layout.letter_activity);
 		tv = (TextView) findViewById(R.id.textViewLetter);
 		Intent i = getIntent();
-		tv.setText(i.getStringExtra("response"));
-		/*try {
-			jo = new JSONObject(i.getStringExtra("response"));
+		JSONObject response;
+		try {
+			response = new JSONObject(i.getStringExtra("response"));
+			form = response.getJSONObject("form");
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		try {
 			getStrings();
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -51,29 +56,30 @@ public class LetterActivity extends Activity {
 		.append(et18 + "\n")
 		.append(et19 + "\n")
 		.append(et20 + "\n");
-		tv.setText(sb.toString());*/
+		tv.setText(sb.toString());
 	}
 
 	private void getStrings() throws JSONException {
-		et01 = jo.getString("et01");
-		et02 = jo.getString("et02");
-		et03 = jo.getString("et03");
-		et04 = jo.getString("et04");
-		et05 = jo.getString("et05");
-		et06 = jo.getString("et06");
-		et07 = jo.getString("et07");
-		et08 = jo.getString("et08");
-		et09 = jo.getString("et09");
-		et11 = jo.getString("et11");
-		et12 = jo.getString("et12");
-		et13 = jo.getString("et13");
-		et14 = jo.getString("et14");
-		et15 = jo.getString("et15");
-		et16 = jo.getString("et16");
-		et17 = jo.getString("et17");
-		et18 = jo.getString("et18");
-		et19 = jo.getString("et19");
-		et20 = jo.getString("et20");
+		et01 = form.getString("et01");
+		et02 = form.getString("et02");
+		et03 = form.getString("et03");
+		et04 = form.getString("et04");
+		et05 = form.getString("et05");
+		et06 = form.getString("et06");
+		et07 = form.getString("et07");
+		et08 = form.getString("et08");
+		et09 = form.getString("et09");
+		et10 = form.getString("et10");
+		et11 = form.getString("et11");
+		et12 = form.getString("et12");
+		et13 = form.getString("et13");
+		et14 = form.getString("et14");
+		et15 = form.getString("et15");
+		et16 = form.getString("et16");
+		et17 = form.getString("et17");
+		et18 = form.getString("et18");
+		et19 = form.getString("et19");
+		et20 = form.getString("et20");
 	}
 
 }

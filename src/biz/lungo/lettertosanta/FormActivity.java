@@ -16,12 +16,15 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +33,7 @@ import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-public class FormActivity extends Activity implements OnClickListener {
+public class FormActivity extends Activity implements OnClickListener, OnLongClickListener {
 	RadioGroup rgSex;
 	EditText et01, et02, et03, et04, et05, et06, et07, et08, et09, 
 	et10, et11, et12, et13, et14, et15, et16, et17, et18, et19, et20;	
@@ -92,6 +95,7 @@ public class FormActivity extends Activity implements OnClickListener {
 		
 		pb.setVisibility(ProgressBar.GONE);
 		buttonDone.setOnClickListener(this);
+		buttonDone.setOnLongClickListener(this);
 		
 	}
 	@Override
@@ -186,6 +190,30 @@ public class FormActivity extends Activity implements OnClickListener {
 
 	    bufferedReader.close();
 	    return stringBuilder.toString();
+	}
+	@Override
+	public boolean onLongClick(View v) {
+		et01.setText("Илья");
+		et02.setText("26");
+		et03.setText("01.00");
+		et04.setText("ребро");
+		et05.setText("клубнику");
+		et06.setText("Лорем ипсум долор амет");
+		et07.setText("чудила");
+		et08.setText("идтить колотить!");
+		et09.setText("пятка");
+		et10.setText("тряпка");
+		et11.setText("тракторист");
+		et12.setText("застреляшки");
+		et13.setText("армагедон");
+		et14.setText("хреново");
+		et15.setText("ёлки");
+		et16.setText("трансфокатор");
+		et17.setText("семку");
+		et18.setText("Колыма");
+		et19.setText("Федор Михалыч");
+		et20.setText("киргизка");
+		return false;
 	}
 
 }
